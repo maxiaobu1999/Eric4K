@@ -14,13 +14,13 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         externalNativeBuild {
-            cmake {
-                cppFlags "-std=c++14"
-                cppFlags "-std=c++14 -frtti -fexceptions"
-                arguments "-DANDROID_ABI=arm64-v8a"
-                arguments "-DANDROID_STL=c++_shared"
-                arguments "-DCMAKE_BUILD_TYPE=Release"
-            }
+//            cmake {
+//                cppFlags "-std=c++14"
+//                cppFlags "-std=c++14 -frtti -fexceptions"
+//                arguments "-DANDROID_ABI=arm64-v8a"
+//                arguments "-DANDROID_STL=c++_shared"
+//                arguments "-DCMAKE_BUILD_TYPE=Release"
+//            }
         }
         ndk {
             abiFilters "arm64-v8a"
@@ -48,9 +48,9 @@ android {
             path "src/main/cpp/CMakeLists.txt"
         }
     }
-    packagingOptions {
-        pickFirst 'lib/arm64-v8a/libassimp.so'
-    }
+//    packagingOptions {
+//        pickFirst 'lib/arm64-v8a/libassimp.so'
+//    }
 }
 
 dependencies {

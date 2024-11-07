@@ -4,6 +4,10 @@
 
 #include "MyFfmpeg.h"
 #include "LogUtil.h"
+
+#include <mutex>
+#include <stdio.h>
+
 MyFfmpeg *MyFfmpeg::m_pContext = nullptr;
 mutex MyFfmpeg::m_Mutex;
 
@@ -27,6 +31,9 @@ MyFfmpeg *MyFfmpeg::GetInstance() {
 }
 
 void MyFfmpeg::sample() {
-    LOGCATD("MyFfmpeg::sample");
+    avformat_alloc_context();
 
+    LOGCATD("MyFfmpeg::sample");
+    av_log_set_level(AV_LOG_DEBUG);
+    av_log(NULL, AV_LOG_ERROR, "hello world!\n");
 }
